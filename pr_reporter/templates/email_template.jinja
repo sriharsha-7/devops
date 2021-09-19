@@ -1,0 +1,29 @@
+Hi,
+
+Please find below the last week pull request summary of the repo {{repo}}:
+
+Total number of PR's  created/updated/closed last week {{summary_records|length}}
+
+1. {{open}} PR's were updated/created.
+2. {{closed}} PR's were closed.
+
+Detailed summary is given below:
+
+{% for summary_record in summary_records %}
+
+{{loop.index}}. {{summary_record['title']}} ({{summary_record['state']}}) 
+
+Raised by: {{summary_record['user_name']}}
+
+Body:
+    {{summary_record['body']}}
+
+Created at : {{summary_record['created_at']}}
+Updated at : {{summary_record['updated_at']}}
+Merged at  : {{summary_record['merged_at']}}
+Closed at  : {{summary_record['closed_at']}}
+
+url: {{summary_record['url']}}
+{% endfor %}
+
+Thanks.
